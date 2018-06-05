@@ -1,0 +1,111 @@
+一、添加当前更改或新增文件到本地 Git 仓库中
+
+1> 添加指定文件
+$ git add hello-word.txt
+
+1> 添加全部文件
+git add .
+备注："add" 后面有一空格，加点意思就是将本仓库中的所有内容添加到本地仓库中。
+
+2> 提交当前工作空间的修改内容
+$ git commit -m "XXX"
+
+3> 推送本地仓库内容到远程仓库
+$ git push git@github.com:userName/hello-word.git
+
+或者
+
+$ git push -u origin master
+
+备注："userName" 是我们 GitHub 账号的用户名，"hello-word.git" 是我们为这个项目建立的仓库名。
+
+
+$ git push --all -f
+
+备注：强推即利用覆盖方式将你本地的代码替代 GitHub 仓库内的内容
+
+
+二、Git常见功能管理
+
+1. 增加、修改或删除了新文件
+$ git add .
+
+$ git commit -m "XXX"
+
+$ git push origin master
+
+或者
+
+$ git push -u origin master
+
+
+2. 从远程仓库克隆内容至本地仓库
+$ git clone git@github.com:userName/hello-word.git
+
+3. 假如本地仓库已经存在了代码而远程仓库里有更新，需要将更改的内容合并到本地的代码中。
+$ git fetch origin
+备注：获取远程更新。
+
+$ git merge origin/master
+备注：将更新的内容合并到本地分支。
+
+
+4. 拉取远程仓库内容
+$ git pull origin master
+
+
+三、FAQ问题
+问题1、在git pull的过程中，如果有冲突，那么除了冲突的文件之外，其它的文件都会做为staged区的文件保存起来。
+
+解决1:
+1.将本地的冲突文件冲掉，不仅需要reset到MERGE-HEAD或者HEAD,还需要--hard。没有后面的hard，不会冲掉本地工作区。只会冲掉stage区。
+
+$ git reset --hard FETCH_HEAD
+
+2.git pull就会成功。
+
+$ git pull origin master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
